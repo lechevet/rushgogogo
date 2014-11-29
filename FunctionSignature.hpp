@@ -1,5 +1,5 @@
-#ifndef FUNCTION_SIGN_
-# define FUNCTION_SIGN_
+#ifndef FUNCTIONSIGNATURE_HPP_
+# define FUNCTIONSIGNATURE_HPP_
 
 template<typename T>
 struct FunctionSignature;
@@ -33,4 +33,4 @@ struct FunctionSignature<Ret (Arg1, Arg2, Arg3, Arg4)>
     typedef Ret (*type)(Arg1, Arg2, Arg3, Arg4);
 };
 
-#endif // CHARON_HPP_
+#endif // FUNCTIONSIGNATURE_HPP_

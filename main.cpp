@@ -28,17 +28,26 @@ void test5(const std::string& test1, int test2, const std::string &test3, int te
     std::cout << "string " << test1 << " , int "  << test2 << " , and string " << test3 << " and int " << test4 << std::endl;;
 }
 
+void test6(const FunctionSignature<void (const std::string&)>::type &f1)
+{
+  std::cout << "FunctionSignature of a FunctionSignature, must display \"string Coucou\" : ";
+  f1("Coucou");
+}
+
 int main()
 {
-    FunctionSignature<int ()>::type f = &test;
-    FunctionSignature<void (const std::string&)>::type f2 = &test2;
-    FunctionSignature<int (const std::string&, int)>::type f3 = &test3;
-    FunctionSignature<void (const std::string&, int, const std::string&)>::type f4 = &test4;
-    FunctionSignature<void (const std::string&, int, const std::string&, int)>::type f5 = &test5;
-
-    std::cout << f() << " : retour de f()" << std::endl;;
-    f2("Coucou");
-    std::cout << f3("Coucou", 42) << " : retour de f3" << std::endl;
-    f4("Coucou", 42, "blahblah");
-    f5("Coucou", 42, "I'm the last test", 43);
+  FunctionSignature<int ()>::type f = &test;
+  FunctionSignature<void (const std::string&)>::type f2 = &test2;
+  FunctionSignature<int (const std::string&, int)>::type f3 = &test3;
+  FunctionSignature<void (const std::string&, int, const std::string&)>::type f4 = &test4;
+  FunctionSignature<void (const std::string&, int, const std::string&, int)>::type f5 = &test5;
+  FunctionSignature<void (const FunctionSignature<void (const std::string&)>::type &)>::type f6 = &test6;
+    
+  
+  std::cout << f() << " : retour de f()" << std::endl;;
+  f2("Coucou");
+  std::cout << f3("Coucou", 42) << " : retour de f3" << std::endl;
+  f4("Coucou", 42, "blahblah");
+  f5("Coucou", 42, "I'm the last test", 43);
+  f6(f2);
 }
