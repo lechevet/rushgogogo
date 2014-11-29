@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "charon.hpp"
+#include "FunctionSignature.hpp"
 
 int test()
 {
@@ -38,6 +38,6 @@ int main()
     std::cout << f() << " : retour de f()" << std::endl;;
     f2("Coucou");
     std::cout << f3("Coucou", 42) << " : retour de f3" << std::endl;
-    f4("Coucou", 42, "Tu veux voir ma bite ?");
-    f5("Coucou", 42, "Tu veux voir ma bite ?", 43);
+    f4("Coucou", 42, "On fait un dernier test ?");
+    f5("Coucou", 42, "I'm the last test", 43);
 }
