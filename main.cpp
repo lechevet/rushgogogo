@@ -35,9 +35,10 @@ int main()
     FunctionSignature<int (const std::string&, int)>::type f3 = &test3;
     FunctionSignature<void (const std::string&, int, const std::string&)>::type f4 = &test4;
     FunctionSignature<void (const std::string&, int, const std::string&, int)>::type f5 = &test5;
+
     std::cout << f() << " : retour de f()" << std::endl;;
     f2("Coucou");
     std::cout << f3("Coucou", 42) << " : retour de f3" << std::endl;
-    f4("Coucou", 42, "On fait un dernier test ?");
+    f4("Coucou", 42, "blahblah");
     f5("Coucou", 42, "I'm the last test", 43);
 }
